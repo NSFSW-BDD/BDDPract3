@@ -1,6 +1,6 @@
-# Practice - Autograding Instructions
+# Practice 
 
-This repository contains a test suite for an Express.js application. The practice is designed to evaluate your implementation of an Express.js API with specific endpoints and functionality. The following instructions outline the expected behavior that will be tested.
+The practice is designed to evaluate your implementation of an Express.js API with specific endpoints and functionality. The following instructions outline the expected behavior.
 
 ## Instructions
 
@@ -24,30 +24,23 @@ This repository contains a test suite for an Express.js application. The practic
 
 4. **Implement your Express.js application**: Create your Express.js application with the required endpoints and functionality based on the following specifications.
 
-   - **GET /player**: This endpoint should return an array of player objects. The test will check if the response status is 200 (OK) and the response body contains an array with a length of 3.
+      **Basic Part 1**
+      You are to work on the following in categoryRoutes.js and categoryController.js
+      
+      1. get('/', readAllCategory);
+      
+      2. get('/:catid', readCategoryById);
 
-   - **POST /player**: This endpoint should accept a request body containing `name` and `level` properties. The test will send requests to this endpoint with and without the request body. The response status should be 201 (Created) when the request body is provided, and 400 (Bad Request) when the request body is missing.
+      **Basic Part 2**
+      You are to work on the following in furnitureRoutes.js and furnitureController.js
 
-   - **GET /player/:id**: This endpoint should retrieve a specific player's information based on the provided `id`. The test will send a GET request to this endpoint after a successful POST request and expect the response status to be 200 (OK). The response body should contain the `name` and `level` properties matching the values provided in the POST request.
+      1. post('/', createNewFurniture);
+      
+      2. put('/:fid', updateFurnitureById);
+      
+      3. delete('/:fid', deleteFurnitureById);
 
-   - **PUT /player/:id**: This endpoint should update a specific player's information based on the provided `id`. The test will send requests to this endpoint with different scenarios. It will check if the response status is 400 (Bad Request) when the request body is missing or incomplete, 404 (Not Found) when the player does not exist, and 204 (No Content) when the player is successfully updated.
+5. **Submit your solution**:
+   Once you finish testing your application, you can submit your solution for grading.
 
-   - **DELETE /player/:id**: This endpoint should delete a specific player based on the provided `id`. The test will send a DELETE request to this endpoint and expect the response status to be 204 (No Content). After deletion, a subsequent GET request to the same endpoint should return a 404 (Not Found) status.
-
-5. **Run the tests**: Execute the test suite to run the automated tests.
-
-   ```shell
-   npm test
-   ```
-
-6. **Review the test results**: After running the tests, the test suite will display the results in the console. It will indicate which tests passed and which tests failed. Pay attention to the failure messages to identify any errors in your application.
-
-7. **Debug and iterate**: If any tests fail, review the failure messages and debug your Express.js application accordingly. Make the necessary modifications to fix the issues and rerun the tests to verify your changes.
-
-8. **Repeat steps 5 and 6**: Continue iterating on your application, fixing any failing tests until all the tests pass successfully.
-
-9. **Submit your solution**: Once all the tests pass, you can submit your solution for grading or further evaluation.
-
-Note: Make sure your Express.js application follows the specified endpoint URLs and handles requests and responses correctly according to the given instructions.
-
-Good luck with the autograding process!
+   Note: Make sure your Express.js application follows the specified endpoint URLs and handles requests and responses correctly according to the given instructions.
